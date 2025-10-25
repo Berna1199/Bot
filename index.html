@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sala Aviator</title>
+
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background: url('https://i.postimg.cc/W3RN7sRy/IMG-20251019-WA0033.png') no-repeat center center fixed;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+  }
+
+  #loginScreen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.65);
+  }
+
+  .login-box {
+    background: rgba(0,0,0,0.75);
+    padding: 25px;
+    border-radius: 10px;
+    width: 85%;
+    max-width: 350px;
+    text-align: center;
+    backdrop-filter: blur(5px);
+  }
+
+  .login-box input {
+    width: 90%;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 5px;
+    border: none;
+    font-size: 15px;
+  }
+
+  .login-btn {
+    width: 95%;
+    padding: 13px;
+    background: #ff0033;
+    color: #fff;
+    font-size: 17px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  .login-btn:hover {
+    background: #ff335a;
+  }
+
+  #conteudo {
+    display: none;
+    color: #fff;
+    font-size: 22px;
+    text-align: center;
+    margin-top: 50px;
+  }
+</style>
+</head>
+<body>
+
+<div id="loginScreen">
+  <div class="login-box">
+    <h2 style="color:#fff;margin-bottom:10px;">Entrar</h2>
+    <input type="email" id="email" placeholder="Seu Email" />
+    <input type="password" id="password" placeholder="Senha" />
+    <button class="login-btn" onclick="doLogin()">Obter Acesso</button>
+    <p style="color:#fff;font-size:13px;margin-top:10px;">Número: 865453262</p>
+  </div>
+</div>
+
+<!-- Aqui vai aparecer seu conteúdo -->
+<div id="conteudo">
+  ✅ Acesso liberado! <br><br>
+  (Aqui você coloca o que quiser depois!)
+</div>
+
+<script src="login.js"></script>
+</body>
+</html>
