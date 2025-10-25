@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Bot Aviator — Acesso</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;font-family:Arial, sans-serif;}
+  body{
+    display:flex;align-items:center;justify-content:center;
+    min-height:100vh;
+    background:url("https://i.postimg.cc/W3RN7sRy/IMG-20251019-WA0033.png") center/cover no-repeat;
+  }
+  .login-box{
+    width:92%;max-width:370px;
+    background:rgba(0,0,0,0.75);
+    padding:28px;border-radius:10px;
+    backdrop-filter:blur(6px);color:#fff;text-align:center;
+  }
+
+  h1{font-size:22px;margin-bottom:12px;font-weight:700;color:#00e8c0;}
+  label{font-size:13px;text-align:left;width:100%;}
+  .input-field{
+    width:100%;margin:6px 0 12px;
+    padding:12px;border-radius:6px;border:none;color:#fff;
+    background:rgba(255,255,255,0.08);outline:none;font-size:14px;
+  }
+  .button{
+    width:100%;padding:12px;margin-top:10px;
+    background:#00e8c0;border:none;font-weight:bold;
+    font-size:15px;cursor:pointer;border-radius:8px;color:#00292e;
+  }
+  .phone-box{
+    margin:10px 0 16px;font-size:17px;
+    font-weight:bold;color:#00f0d6;
+  }
+  
+  /* Conteúdo do site escondido no início */
+  #conteudo{display:none;width:100%;}
+</style>
+</head>
+<body>
+
+<!-- Login -->
+<div class="login-box" id="loginScreen">
+  <h1>Sala de Sinais Aviator</h1>
+  
+  <label>Email</label>
+  <input id="email" class="input-field" type="email" placeholder="teu@exemplo.com" required>
+  
+  <label>Senha</label>
+  <input id="password" class="input-field" type="password" placeholder="********" required>
+
+  <div class="phone-box">Acesso: 865453262</div>
+
+  <button class="button" id="loginBtn">Entrar</button>
+  <div id="loginMsg" style="margin-top:10px;font-size:13px;color:#ffb3b3;"></div>
+</div>
+
+<!-- SEU CONTEÚDO AQUI -->
+<div id="conteudo">
+  <!-- 🔥🔥 Cola aqui o HTML do teu site 🔥🔥 -->
+  <h2 style="color:white;text-align:center;margin-top:30px;">Carregado com sucesso!</h2>
+</div>
+
+<script>
+const FIXED_PASSWORD = "123KJ";
+
+document.getElementById("loginBtn").addEventListener("click", () => {
+  const pass = document.getElementById("password").value;
+
+  if(pass === FIXED_PASSWORD){
+    document.getElementById("loginMsg").style.color = "#bfffdc";
+    document.getElementById("loginMsg").textContent = "Acesso concedido!";
+    
+    document.getElementById("loginScreen").style.display = "none";
+    document.getElementById("conteudo").style.display = "block";
+  } else {
+    document.getElementById("loginMsg").textContent = "Senha incorreta!";
+  }
+});
+</script>
+
+</body>
+</html>
