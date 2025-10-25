@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Bot Aviator — Acesso</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;font-family:Arial, sans-serif;}
+  body{
+    display:flex;align-items:center;justify-content:center;
+    min-height:100vh;
+    background:url("https://i.postimg.cc/W3RN7sRy/IMG-20251019-WA0033.png") center/cover no-repeat;
+  }
+  .login-box{
+    width:92%;max-width:370px;
+    background:rgba(0,0,0,0.75);
+    padding:28px;border-radius:10px;
+    backdrop-filter:blur(6px);color:#fff;text-align:center;
+  }
+
+  h1{font-size:22px;margin-bottom:12px;font-weight:700;color:#00e8c0;}
+  label{font-size:13px;text-align:left;width:100%;}
+  .input-field{
+    width:100%;margin:6px 0 12px;
+    padding:12px;border-radius:6px;border:none;color:#fff;
+    background:rgba(255,255,255,0.08);outline:none;font-size:14px;
+  }
+  .button{
+    width:100%;padding:12px;margin-top:10px;
+    background:#00e8c0;border:none;font-weight:bold;
+    font-size:15px;cursor:pointer;border-radius:8px;color:#00292e;
+  }
+  .button[disabled]{opacity:0.6;cursor:default;}
+  .phone-box{
+    margin:10px 0 8px;font-size:15px;
+    font-weight:bold;color:#00f0d6;
+  }
+  .payment-box{
+    margin-top:6px;font-size:14px;color:#ffd9b3;
+    font-weight:700;
+  }
+  .whatsapp-btn{
+    display:inline-block;margin-top:10px;padding:10px 14px;border-radius:8px;
+    background:#25D366;color:#fff;text-decoration:none;font-weight:700;
+    box-shadow:0 6px 18px rgba(37,211,102,0.12);
+  }
+
+  /* Mensagem visível no HTML, sem alert */
+  #loginMsg {
+    margin-top:12px;
+    padding:10px 12px;
+    border-radius:8px;
+    font-size:14px;
+    display:none; /* mostrado via JS */
+    text-align:center;
+  }
+  #loginMsg.success{ background: rgba(47, 255, 177, 0.12); color:#bfffdc; border:1px solid rgba(47,255,177,0.18); display:block; }
+  #loginMsg.error{ background: rgba(255, 100, 100, 0.08); color:#ffb3b3; border:1px solid rgba(255,100,100,0.12); display:block; }
+  #loginMsg.info{ background: rgba(255,255,255,0.02); color:#e6f7f2; border:1px solid rgba(255,255,255,0.03); display:block; }
+
+  /* Conteúdo do site escondido no início */
+  #conteudo{display:none;width:100%;}
+  .hidden { display:none !important; }
+</style>
+</head>
+<body>
+
+<!-- Login -->
+<div class="login-box" id="loginScreen">
+  <h1>Sala de Sinais Aviator</h1>
+  
+  <label for="email">Email</label>
+  <input id="email" class="input-field" type="email" placeholder="teu@exemplo.com" required>
+  
+  <label for="password">Senha</label>
+  <input id="password" class="input-field" type="password" placeholder="********" required>
+
+  <div class="phone-box">WhatsApp para obter acesso: <span style="color:#fff">865453262</span></div>
+
+  <div class="payment-box">50MT — Acesso vitalício <span style="font-size:13px;color:#ffd9b3">· 3 DIAS</span></div>
+
+  <button class="button" id="loginBtn" type="button">Entrar</button>
+
+  <!-- botão para WhatsApp abrir conversa -->
+  <div>
+    <a id="waLink" class="whatsapp-btn" target="_blank" rel="noreferrer">Falar no WhatsApp</a>
+  </div>
+
+  <!-- Mensagem visível (usada em vez de alert()). aria-live para leitores de ecrã -->
+  <div id="loginMsg" role="status" aria-live="polite"></div>
+</div>
+
+<!-- SEU CONTEÚDO AQUI -->
+<div id="conteudo">
+  <div style="padding:24px;color:white;text-align:center;">
+    <h2>✅ Acesso liberado!</h2>
+    <p>Cola aqui o teu conteúdo de sinais (HTML/iframe/etc.)</p>
+  </div>
+</div>
+
+<script src="login.js"></script>
+<script>
+  // Ajusta link WhatsApp (prefixo +258 por defeito - altera se necessário)
+  (function(){
+    const PHONE = '865453262';
+    const wa = document.getElementById('waLink');
+    wa.href = 'https://wa.me/258' + PHONE;
+    wa.textContent = 'Falar no WhatsApp • +258 ' + PHONE;
+  })();
+</script>
+</body>
+</html>
